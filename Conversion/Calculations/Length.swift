@@ -13,67 +13,22 @@ enum Length: String, CaseIterable {
     case meters = "m"
 }
 
-func convertFeet(amount feet: Double, to outputUnit: Length) -> Double {
-    switch outputUnit {
+func convertToMeters(_ amount: Double, unit: Length) -> Double {
+    switch unit {
     case .feet:
-        return feet
+        return amount * 0.3048
     case .yards:
-        return feet / 3
+        return amount * 0.9144
     case .miles:
-        return feet / 5_280
+        return amount * 1_609.344
     case .kilometers:
-        return feet * 0.0003048
+        return amount * 1_000
     case .meters:
-        return feet * 0.3048
+        return amount
     }
 }
 
-func convertYards(amount yards: Double, to outputUnit: Length) -> Double {
-    switch outputUnit {
-    case .feet:
-        return yards * 3
-    case .yards:
-        return yards
-    case .miles:
-        return yards * 0.0005681818
-    case .kilometers:
-        return yards * 0.0009144
-    case .meters:
-        return yards * 0.9144
-    }
-}
-
-func convertMiles(amount miles: Double, to outputUnit: Length) -> Double {
-    switch outputUnit {
-    case .feet:
-        return miles * 5_280
-    case .yards:
-        return miles * 5_280 / 3
-    case .miles:
-        return miles
-    case .kilometers:
-        return miles * 1.609344
-    case .meters:
-        return miles * 1_609.344
-    }
-}
-
-func convertKilometers(amount kilometers: Double, to outputUnit: Length) -> Double {
-    switch outputUnit {
-    case .feet:
-        return kilometers * 3_280.84
-    case .yards:
-        return kilometers * 1_093.613
-    case .miles:
-        return kilometers * 0.6213710245
-    case .kilometers:
-        return kilometers
-    case .meters:
-        return kilometers * 1_000
-    }
-}
-
-func convertMeters(amount meters: Double, to outputUnit: Length) -> Double {
+func convertFromMeters(_ meters: Double, to outputUnit: Length) -> Double {
     switch outputUnit {
     case .feet:
         return meters * 3.28084
@@ -89,18 +44,7 @@ func convertMeters(amount meters: Double, to outputUnit: Length) -> Double {
 }
 
 func convertLength(_ amount: Double, from: Length, to: Length) -> String {
-    var result: Double
-    switch from {
-    case .feet:
-        result = convertFeet(amount: amount, to: to)
-    case .yards:
-        result = convertYards(amount: amount, to: to)
-    case .miles:
-        result = convertMiles(amount: amount, to: to)
-    case .kilometers:
-        result = convertKilometers(amount: amount, to: to)
-    case .meters:
-        result = convertMeters(amount: amount, to: to)
-    }
+    let amountInMeters = convertToMeters(amount, unit: from)
+    let result = convertFromMeters(amountInMeters, to: to)
     return "\(amount) \(from.rawValue) is \(result) \(to.rawValue)"
 }

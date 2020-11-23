@@ -11,48 +11,30 @@ enum Temperature: String, CaseIterable {
     case kelvin = "Kelvin"
 }
 
-func convertFahrenheit(_ degrees: Double, to newScale: Temperature) -> Double {
-    switch newScale {
-    case .fahrenheit:
-        return degrees
+func convertToCelsius(_ degrees: Double, unit: Temperature) -> Double {
+    switch unit {
     case .celsius:
+        return degrees
+    case .fahrenheit:
         return (degrees - 32.0) / 1.8000
     case .kelvin:
-        return ((degrees - 32.0) / 1.8000) + 273.15
-    }
-}
-
-func convertCelsius(_ degrees: Double, to newScale: Temperature) -> Double {
-    switch newScale {
-    case .fahrenheit:
-        return degrees * 1.8000 + 32.0
-    case .celsius:
-        return degrees
-    case .kelvin:
-        return degrees + 273.15
-    }
-}
-
-func convertKelvin(_ degrees: Double, to newScale: Temperature) -> Double {
-    switch newScale {
-    case .fahrenheit:
-        return (degrees - 273.15) * 1.8000 + 32
-    case .celsius:
         return degrees - 273.15
+    }
+}
+
+func convertFromCelsius(_ degreesCelsius: Double, to newScale: Temperature) -> Double {
+    switch newScale {
+    case .fahrenheit:
+        return degreesCelsius * 1.8000 + 32.0
+    case .celsius:
+        return degreesCelsius
     case .kelvin:
-        return degrees
+        return degreesCelsius + 273.15
     }
 }
 
 func convertTemperature(_ degrees: Double, from: Temperature, to: Temperature) -> String {
-    var result: Double
-    switch from {
-    case .fahrenheit:
-        result = convertFahrenheit(degrees, to: to)
-    case .celsius:
-        result = convertCelsius(degrees, to: to)
-    case .kelvin:
-        result = convertKelvin(degrees, to: to)
-    }
+    let degreesInCelsius = convertToCelsius(degrees, unit: from)
+    let result = convertFromCelsius(degreesInCelsius, to: to)
     return "\(degrees) in \(from.rawValue) is \(result) in \(to.rawValue)"
 }
