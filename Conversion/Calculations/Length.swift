@@ -6,9 +6,9 @@
 //
 
 enum Length: String, CaseIterable {
-    case feet = "Feet"
-    case yards = "Yards"
-    case miles = "Miles"
+    case feet = "feet"
+    case yards = "yards"
+    case miles = "miles"
     case kilometers = "km"
     case meters = "m"
 }
@@ -102,5 +102,5 @@ func convertLength(_ amount: Double, from: Length, to: Length) -> String {
     case .meters:
         result = convertMeters(amount: amount, to: to)
     }
-    return "\(amount) \(from) is \(result) \(to)"
+    return "\(amount) \(from.rawValue) is \(result) \(to.rawValue)"
 }

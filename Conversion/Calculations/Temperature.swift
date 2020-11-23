@@ -54,5 +54,5 @@ func convertTemperature(_ degrees: Double, from: Temperature, to: Temperature) -
     case .kelvin:
         result = convertKelvin(degrees, to: to)
     }
-    return "\(degrees) in \(from) is \(result) in \(to)"
+    return "\(degrees) in \(from.rawValue) is \(result) in \(to.rawValue)"
 }
