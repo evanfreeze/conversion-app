@@ -11,6 +11,11 @@
 		EA1E2ABA256B4628004898EA /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E2AB9256B4628004898EA /* ContentView.swift */; };
 		EA1E2ABC256B4629004898EA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA1E2ABB256B4629004898EA /* Assets.xcassets */; };
 		EA1E2ABF256B4629004898EA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = EA1E2ABE256B4629004898EA /* Preview Assets.xcassets */; };
+		EA1E2AC9256C02D0004898EA /* Length.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E2AC8256C02D0004898EA /* Length.swift */; };
+		EA1E2ACD256C030D004898EA /* Temperature.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E2ACC256C030D004898EA /* Temperature.swift */; };
+		EA1E2AD0256C0328004898EA /* Time.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E2ACF256C0328004898EA /* Time.swift */; };
+		EA1E2AD3256C0346004898EA /* Volume.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E2AD2256C0346004898EA /* Volume.swift */; };
+		EA1E2AD6256C0384004898EA /* ConversionType.swift in Sources */ = {isa = PBXBuildFile; fileRef = EA1E2AD5256C0384004898EA /* ConversionType.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +25,11 @@
 		EA1E2ABB256B4629004898EA /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		EA1E2ABE256B4629004898EA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		EA1E2AC0256B4629004898EA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		EA1E2AC8256C02D0004898EA /* Length.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Length.swift; sourceTree = "<group>"; };
+		EA1E2ACC256C030D004898EA /* Temperature.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Temperature.swift; sourceTree = "<group>"; };
+		EA1E2ACF256C0328004898EA /* Time.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Time.swift; sourceTree = "<group>"; };
+		EA1E2AD2256C0346004898EA /* Volume.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Volume.swift; sourceTree = "<group>"; };
+		EA1E2AD5256C0384004898EA /* ConversionType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConversionType.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,8 +62,10 @@
 		EA1E2AB6256B4628004898EA /* Conversion */ = {
 			isa = PBXGroup;
 			children = (
+				EA1E2AC7256C02B8004898EA /* Calculations */,
 				EA1E2AB7256B4628004898EA /* ConversionApp.swift */,
 				EA1E2AB9256B4628004898EA /* ContentView.swift */,
+				EA1E2AD5256C0384004898EA /* ConversionType.swift */,
 				EA1E2ABB256B4629004898EA /* Assets.xcassets */,
 				EA1E2AC0256B4629004898EA /* Info.plist */,
 				EA1E2ABD256B4629004898EA /* Preview Content */,
@@ -67,6 +79,17 @@
 				EA1E2ABE256B4629004898EA /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		EA1E2AC7256C02B8004898EA /* Calculations */ = {
+			isa = PBXGroup;
+			children = (
+				EA1E2AC8256C02D0004898EA /* Length.swift */,
+				EA1E2ACC256C030D004898EA /* Temperature.swift */,
+				EA1E2ACF256C0328004898EA /* Time.swift */,
+				EA1E2AD2256C0346004898EA /* Volume.swift */,
+			);
+			path = Calculations;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,6 +162,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				EA1E2ABA256B4628004898EA /* ContentView.swift in Sources */,
+				EA1E2AC9256C02D0004898EA /* Length.swift in Sources */,
+				EA1E2AD0256C0328004898EA /* Time.swift in Sources */,
+				EA1E2AD3256C0346004898EA /* Volume.swift in Sources */,
+				EA1E2AD6256C0384004898EA /* ConversionType.swift in Sources */,
+				EA1E2ACD256C030D004898EA /* Temperature.swift in Sources */,
 				EA1E2AB8256B4628004898EA /* ConversionApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
